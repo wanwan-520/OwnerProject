@@ -1,0 +1,66 @@
+<template>
+    <div>
+
+   <!-- 面包屑导航区 -->
+    <el-breadcrumb separator-class="el-icon-arrow-right">
+  <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+  <el-breadcrumb-item>商品管理</el-breadcrumb-item>
+  <el-breadcrumb-item>添加商品</el-breadcrumb-item>
+</el-breadcrumb>
+
+<!-- 卡片视图区 -->
+<el-card>
+  <el-alert
+    title="添加商品"
+    type="info"
+    center
+    show-icon :closable="false">
+  </el-alert>
+
+<!-- 步骤条组件 -->
+  <el-steps :space="200" :active="activeIndex" finish-status="success" align-center>
+  <el-step title="基本信息"></el-step>
+  <el-step title="商品参数"></el-step>
+  <el-step title="商品属性"></el-step>
+  <el-step title="商品图片"></el-step>
+  <el-step title="商品内容"></el-step>
+  <el-step title="完成"></el-step>
+</el-steps>
+
+
+
+ <el-tabs :tab-position="" @tab-click="handleClick">
+    <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
+    <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+    <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+    <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+  </el-tabs>
+
+
+
+</el-card>
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+           activeIndex:0
+        }
+    },
+
+    created(){
+
+    },
+
+methods:{
+
+}
+    
+}
+</script>
+
+<style lang="less" scoped>
+
+</style>
